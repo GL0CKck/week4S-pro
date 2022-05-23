@@ -9,8 +9,9 @@ def fibonacci_list(n: int) -> list:
             n3 = n1 + n2
             n1 = n2
             n2 = n3
+            count += 1
+        yield equal
 
-        return equal
 
-
-print(fibonacci_list(11))
+for i in fibonacci_list(11):
+    print(i)

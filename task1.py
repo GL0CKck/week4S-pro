@@ -11,31 +11,31 @@ class FormulaError(Error):
 def except_e(n: str):
     list_action = ['+', '-', '/', '*']
     if n not in list_action:
-        raise FormulaError
+        raise FormulaError('Input does have 3 elements, second element must be +,-,/,*')
 
 
-def calculate():
+def calculate(solv: str):
     while True:
         try:
-            solv = input('Input your example: ')
             valid_solv = [i for i in solv.split()]
             equal = (str(float(valid_solv[0]))) + valid_solv[1] + (str(float(valid_solv[-1])))
             if len(valid_solv) != 3:
-                raise FormulaError
+                raise FormulaError('Input does have 3 elements, second element must be +,-,/,*')
             if except_e(valid_solv[1]):
                 raise ValueError
             else:
                 return eval(equal)
 
-        except FormulaError:
-            print('Input does have 3 elements, second element must be +,-,/,*')
-            print()
         except ValueError:
             print("ValueError")
-
+            break
         except IndexError:
             print('You did not input anything')
             break
 
 
-print(calculate())
+# print(calculate('2 a 2'))
+print(calculate('2 + 2'))
+# print(calculate('2 + 2'))
+# print(calculate('a + 2'))
+

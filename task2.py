@@ -14,6 +14,8 @@ class ReverseIter:
                 return result
             except IndexError:
                 print('Iteration out of range')
+        else:
+            raise StopIteration
 
 
 a = ReverseIter([1, 2, 3, 4, 5])
