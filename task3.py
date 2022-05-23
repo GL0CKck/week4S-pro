@@ -13,6 +13,10 @@ def fibonacci_list(n: int) -> list:
         yield equal
 
 
-for a in fibonacci_list(11):
-    print(a)
+def fibon_list(n):
+    """ Version with func"""
+    for a in fibonacci_list(n):
+        print(a)
 
+
+fibon_list(11)
