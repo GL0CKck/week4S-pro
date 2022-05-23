@@ -13,5 +13,6 @@ def fibonacci_list(n: int) -> list:
         yield equal
 
 
-for i in fibonacci_list(11):
-    print(i)
+for a in fibonacci_list(11):
+    print(a)
+
